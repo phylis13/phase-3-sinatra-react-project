@@ -1,52 +1,25 @@
+# frozen_string_literal: true
+
 source "https://rubygems.org"
 
-# A DSL for quickly creating web applications
-# https://github.com/sinatra/sinatra
-gem "sinatra", "~> 2.1"
+ruby '3.0.2' #File.read('.ruby-version').strip
 
-# A fast and simple web server
-# https://github.com/macournoyer/thin
-gem "thin", "~> 1.8"
+# gem "rails"
+gem 'sinatra', '~> 3.0', '>= 3.0.5'
 
-# Rack middleware. Used specifically for parsing the request body into params.
-# https://github.com/rack/rack-contrib
-gem "rack-contrib", "~> 2.3"
+gem 'activerecord', '~> 7.0', '>= 7.0.4.2'
 
-# More Rack middleware! Used to handle CORS requests
-# https://github.com/cyu/rack-cors
-gem "rack-cors", "~> 1.1"
+gem 'rake', '~> 13.0', '>= 13.0.6'
 
-# An object-relational mapper
-# https://guides.rubyonrails.org/active_record_basics.html
-gem "activerecord", "~> 6.1"
+gem 'sqlite3', '~> 1.6', '>= 1.6.1'
 
-# Configures common Rake tasks for working with Active Record
-# https://github.com/sinatra-activerecord/sinatra-activerecord
-gem "sinatra-activerecord", "~> 2.0"
+gem 'sinatra-activerecord', '~> 2.0', '>= 2.0.26'
 
-# Run common tasks from the command line
-# https://github.com/ruby/rake
-gem "rake", "~> 13.0"
+gem 'puma', '~> 6.1'
 
-# Provides functionality to interact with a SQLite3 database
-gem "sqlite3", "~> 1.4"
+gem 'require_all', '~> 3.0'
 
-# Require all files in a folder
-gem "require_all", "~> 3.0"
-
-# These gems will only be used when we are running the application locally
 group :development do
-  gem "pry", "~> 0.14.1"
-
-  # Automatically reload when there are changes
-  # https://github.com/alexch/rerun
-  gem "rerun"
+    gem 'rerun', '~> 0.14.0'
 end
-
-# These gems will only be used when we are running tests
-group :test do
-  gem "database_cleaner", "~> 2.0"
-  gem "rack-test", "~> 1.1"
-  gem "rspec", "~> 3.10"
-  gem "rspec-json_expectations", "~> 2.2"
-end
+gem "pry", "~> 0.14.2"
