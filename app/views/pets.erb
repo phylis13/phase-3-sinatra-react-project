@@ -1,23 +1,53 @@
-<!DOCTYPE html>
-<html>
-    <head>
-    <title>Hello ruby</title>
+<div class="mt-5">
 
-    </head>
-    <body>
-    <p>Welcome to your list</p>
+  <% if @pets.empty? %>
 
-    <ol type="1">
-    <% @todos.each do |todo| %>
-        <li> <%= todo.name%>>>><%= todo.description%></li>
+    <div class="row justify-content-center mt-5">
+      <div class="card col-lg-4 col-sm-12 col-md-6">
+        <img src="https://img.icons8.com/color/96/null/nothing-found.png"
+             class="card-img-top" alt="nothing" style="object-fit: inherit;">
+        <div class="card-body">
+          <p class="card-text">You have no pets created yet!</p>
+        </div>
+      </div>
+    </div>
 
-    <%end%>
-    
-    </ol>
-    
+  <% else %>
+    <h2>Here are some of your pets</h2>
+    <table class="table table-bordered">
+      <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Name</th>
+        <th scope="col">Description</th>
+        <th scope="col">Breed</th>
+        <th scope="col">Contact</th>
+        <th scope="col">Photo</th>
+        <th scope="col">Status</th>
+      </tr>
+      </thead>
+      <tbody>
 
+      <% @pets.each do |x|  %>
+        <tr>
+          <th scope="row"><%= @i  %> </th>
+          <td><%= x[:pet].name %></td>
+          <td><%= x[:pet].description %></td>
+          <td><%= x[:pet].breeds %></td>
+          <td><%= x[:pet].contact %></td>
+          <td><%= x[:pet].photos %></td>
+          
+          <td>
+            <span class="badge <%= x[:badge] %>">
+              <%= x[:pet].status %>
+            </span>
+          </td>
+        </tr>
+        <% @i += 1 %>
+      <% end %>
+      </tbody>
+    </table>
 
+  <% end %>
 
-    </body>
-
-</html>
+</div>
