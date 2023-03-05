@@ -7,7 +7,7 @@ To get started with the backend, clone this repository and run bundle install to
 
 sh
 
-$ git clone https://github.com/YOUR_USERNAME/petfinder-backend.git
+$ git clone 
 $ cd petfinder-backend
 $ bundle install
 
